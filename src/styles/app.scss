@@ -16,15 +16,18 @@
 
 .image-logo {
   height: 480px;
+  @media only screen and (max-width: 600px) {
+    height: 240px;
+  }
 }
 
-.create-game {
+.create-key {
     color: #fff;
     background: none;
     border: 0;
     padding: 0 16px;
     margin-top: .5em;
-    font-size: 48px;
+    font-size: 38px;
     font-family: fantasy;
     letter-spacing: .02em;
     text-shadow: 1px 1px 4px black;

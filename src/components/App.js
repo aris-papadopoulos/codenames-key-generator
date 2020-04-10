@@ -3,7 +3,7 @@ import main from '../assets/main.png';
 import gr from '../assets/flags/greece.svg';
 import uk from '../assets/flags/uk.svg';
 import { texts } from '../texts';
-import { history, encodeGame } from '../utilities';
+import { history, createNewKey, encodeKey } from '../utilities';
 import '../styles/app.scss';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
                 </div>
                 <img src={main} className="image-logo" alt="logo" />
                 <div className="actions">
-                    <button className="create-game" onClick={() => createNewGame(lang)}>{texts[lang].newGame}</button>
+                    <button className="create-key" onClick={() => createKey(lang)}>{texts[lang].createNew}</button>
                     <div className="language">
                         <p>{texts[lang].language}:</p>
                         <div>
@@ -33,9 +33,11 @@ function App() {
     );
 }
 
-const createNewGame = (lang) => {
-    const encodedGame = encodeGame(lang);
-    history.push(`/game/${lang}/${encodedGame}`);
+const createKey = (lang) => {
+    const encodedKey = createNewKey();
+    const keyArray = encodeKey(encodedKey);
+    console.log(keyArray);
+    history.push(`/key/${lang}/${keyArray.encoded}`);
 }
 
 export default App;

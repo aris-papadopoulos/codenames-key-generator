@@ -21,12 +21,12 @@
         position: relative;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(5, 40px);
+        grid-template-rows: repeat(5, 56px);
         border: 8px solid #000;
         border-radius: 12px;
         color: #333;
         .key-element {
-            width: 40px;
+            width: 56px;
             position: relative;
             border: 1px solid #000;
             &.blue, &.red {
@@ -59,7 +59,7 @@
                     content: 'X';
                     position: absolute;
                     width: 100%;
-                    top: 4px;
+                    top: 12px;
                     left: 0;
                     font: bold 22px cursive;
                     text-shadow: 1px 1px 12px #eee;

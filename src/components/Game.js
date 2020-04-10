@@ -1,37 +1,46 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
-import { history, encodeGame, decodeBase64 } from '../utilities';
+import { history, decodeBase64, createNewKey } from '../utilities';
 import { texts } from '../texts';
 import Key from './Key';
-import Card from './Card';
 import '../styles/game.scss';
 
 const Game = (props) => {
     
     const { addToast } = useToasts();
+    
+    const initialKey = {encoded: ''};
 
-    const [game, setGame] = useState(null);
+    const [key, setKey] = useState(initialKey);
     const { lang, id } = props.match.params;
     const prevID = usePrevious(id);
 
     useEffect(() => {
         const { id } = props.match.params;
         if (prevID !== id) {
-            const gameArray = decodeBase64(id);
-            setGame(gameArray);
+            const keyArray = decodeBase64(id);
+            console.log(keyArray)
+            setKey(keyArray);
         }
     }, [props.match.params, prevID]);
     
-    const createNewGame = (lang) => {
-        const encodedGame = encodeGame(lang);
-        history.push(`/game/${lang}/${encodedGame}`);
+    const createKey = () => {
+        let key = createNewKey();
+
+        var myJSON = JSON.stringify(key);
+        const encoded = window.btoa(myJSON);
+        key = {...key, encoded}
+        console.log(key);
+        history.push(`/key/${lang}/${key.encoded}`);
+
+        setKey(key);
     }
 
     const copyToClipboard = () => {
         try {
             navigator.clipboard.writeText(window.location.href);
-            addToast(texts[lang].copyURLsuccess, { appearance: 'success', autoDismiss: true, autoDismissTimeout: 3000 })
+            addToast(texts[lang].copyURLsuccess, { appearance: 'success', autoDismiss: true })
         }
         catch(err) {
             addToast(texts[lang].copyURLfail, { appearance: 'error' })
@@ -43,24 +52,16 @@ const Game = (props) => {
             <header className="Game-header">
                 <Link className="link" to={'/'}>{texts[lang].homepage}</Link>
                 <div>
-                    <button onClick={() => createNewGame(lang)}>{texts[lang].newGame}</button>
+                    <button onClick={() => createKey(lang)}>{texts[lang].createNew}</button>
                     <button onClick={() => copyToClipboard()}>{texts[lang].copyURL}</button>
                 </div>
             </header>
             <main>
-                <div className="cards-wrapper">
-                    {(game) ?
-                    game.map(i => {
-                        return <Card key={i} lang={lang} index={i} />
-                    })
-                    : null}
-                </div>
-                <Key lang={lang} />
+                <Key lang={lang} keyMap={key} />
             </main>
         </div>
     );
 }
-
 
 // Hook - Used to keep prevProps on functional components
 function usePrevious(value) {
