@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/codenames-key-generator/static/css/main.e3ecf5b8.chunk.css",
+    "main.js": "/codenames-key-generator/static/js/main.c8a838ed.chunk.js",
+    "main.js.map": "/codenames-key-generator/static/js/main.c8a838ed.chunk.js.map",
+    "runtime-main.js": "/codenames-key-generator/static/js/runtime-main.8b6b46e0.js",
+    "runtime-main.js.map": "/codenames-key-generator/static/js/runtime-main.8b6b46e0.js.map",
+    "static/js/2.0650b455.chunk.js": "/codenames-key-generator/static/js/2.0650b455.chunk.js",
+    "static/js/2.0650b455.chunk.js.map": "/codenames-key-generator/static/js/2.0650b455.chunk.js.map",
+    "index.html": "/codenames-key-generator/index.html",
+    "precache-manifest.f8315bf7029ed8eca9576a91d731ae73.js": "/codenames-key-generator/precache-manifest.f8315bf7029ed8eca9576a91d731ae73.js",
+    "service-worker.js": "/codenames-key-generator/service-worker.js",
+    "static/css/main.e3ecf5b8.chunk.css.map": "/codenames-key-generator/static/css/main.e3ecf5b8.chunk.css.map",
+    "static/js/2.0650b455.chunk.js.LICENSE.txt": "/codenames-key-generator/static/js/2.0650b455.chunk.js.LICENSE.txt",
+    "static/media/greece.svg": "/codenames-key-generator/static/media/greece.90595896.svg",
+    "static/media/main.png": "/codenames-key-generator/static/media/main.9d579f75.png",
+    "static/media/uk.svg": "/codenames-key-generator/static/media/uk.e5564902.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8b6b46e0.js",
+    "static/js/2.0650b455.chunk.js",
+    "static/css/main.e3ecf5b8.chunk.css",
+    "static/js/main.c8a838ed.chunk.js"
+  ]
+}
