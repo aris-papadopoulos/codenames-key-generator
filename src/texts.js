@@ -1,0 +1,40 @@
+export const texts = {
+    el: {
+        title: 'Κωδική_oνομασία',
+        newGame: 'Νέο παιχνίδι',
+        language: 'Γλώσσα',
+        copyURLsuccess: 'Το URL αντιγράφηκε στο clipboard. Τώρα μπορείτε να το μοιράσετε στους συμπαίκτες σας',
+        copyURLfail: 'Σφάλμα αντιγραφής URL',
+        homepage: 'Αρχική',
+        copyURL: 'Αντιγραφή URL',
+        spymasterKey: 'Κλειδί codemaster',
+        create: 'Δημιουργία',
+        copy: 'Αντιγραφή',
+        reset: 'Επαναφορά',
+        insert: 'Εισαγωγή',
+        back: 'Πίσω',
+        ok: 'OK',
+        copyKeySuccess: 'Επιτυχής αντιγραφή στο clipboard',
+        copyKeyFail: 'Σφάλμα αντιγραφής',
+        information: 'Πληροφορίες'
+    },
+    en: {
+        title: 'Code_names',
+        newGame: 'New game',
+        language: 'Language',
+        copyURLsuccess: 'URL is copied to clipboard. You can now share it with your co-players',
+        copyURLfail: 'Error while copying the URL',
+        homepage: 'Homepage',
+        copyURL: 'Copy URL',
+        spymasterKey: 'Codemaster key',
+        create: 'Create',
+        copy: 'Copy',
+        reset: 'Reset',
+        insert: 'Insert',
+        back: 'Back',
+        ok: 'OK',
+        copyKeySuccess: 'Key successfully copied to clipboard',
+        copyKeyFail: 'Failed to copy key',
+        information: 'Information'
+    }
+}
